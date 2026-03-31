@@ -49,3 +49,29 @@ override suspend fun run(ctx: UniversalAppContext): Result<Unit> {
     return ctx.client.display(text, DisplayOptions())
 }
 ```
+
+---
+
+## google_sync (Google Ecosystem Sync)
+
+Location: `xg-glass-sample/google_sync`
+
+This sample demonstrates a full **conversation-to-Google-services** pipeline: **record audio → Whisper transcription → LLM extraction → sync to Google Drive / Calendar / Tasks**.
+
+- Record audio from the glasses microphone and transcribe via OpenAI Whisper
+- Extract structured data (memories, tasks, calendar events) using an LLM
+- Sync transcripts to **Google Drive**, events to **Google Calendar**, and action items to **Google Tasks**
+- Also supports manual text input (no microphone needed)
+
+### Quick run
+
+```bash
+cd xg-glass-sample/google_sync
+xg-glass run GoogleSyncEntry.kt
+```
+
+Notes:
+
+- Requires an OpenAI-compatible API endpoint with Whisper support.
+- Requires a **Google OAuth2 Access Token** with Drive, Calendar, and Tasks scopes (see [OAuth Playground](https://developers.google.com/oauthplayground/)).
+- Configure all credentials in the app's **Settings** panel.
