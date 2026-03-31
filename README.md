@@ -75,3 +75,30 @@ Notes:
 - Requires an OpenAI-compatible API endpoint with Whisper support.
 - Requires a **Google OAuth2 Access Token** with Drive, Calendar, and Tasks scopes (see [OAuth Playground](https://developers.google.com/oauthplayground/)).
 - Configure all credentials in the app's **Settings** panel.
+
+---
+
+## indoor_nav (Indoor Wayfinding)
+
+Location: `xg-glass-sample/indoor_nav`
+
+This sample demonstrates an **AR glasses indoor navigation assistant** for large venues: **capture visual cues → AI vision analysis → step-by-step navigation on glasses**.
+
+- Capture photos of your surroundings and use AI vision to identify your current location
+- Say your destination via voice, get step-by-step walking directions (max 4 steps)
+- Find nearest facilities (restroom, elevator, etc.) based on visible signs and directories
+- Read, translate, and interpret all visible signage
+- Session memory: remembers visited locations for improved accuracy
+
+### Quick run
+
+```bash
+cd xg-glass-sample/indoor_nav
+xg-glass run IndoorNavEntry.kt
+```
+
+Notes:
+
+- Requires an OpenAI-compatible API endpoint with **vision model** support (e.g. `gpt-4o`).
+- Voice commands (Navigate To, Find Nearest) require Whisper support.
+- Configure venue name and current floor in the app's **Settings** panel for best results.
